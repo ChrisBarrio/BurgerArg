@@ -159,7 +159,7 @@ header{
     display: block;
     text-align: center;
     background-color: var(--white);
-    & h2{
+        & h2{
             position: relative;
             font-size: 9rem;
             text-transform: uppercase;
@@ -182,7 +182,7 @@ header{
         }
         & div{
             display: flex;
-            flex-wrap: wrap;
+            
             & div{
                 & img{
                     width: 50%;
@@ -198,10 +198,9 @@ header{
                     }
                 }
             }
+            
             & div{
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
+                    display: block;                    
                     & .container1{
                         padding: 3rem;
                         & h3{
@@ -226,9 +225,9 @@ header{
                             }    
                         }
                     }
+
                     & .container2{
                         display: flex;
-                        flex-wrap: wrap;
                         justify-content: space-around;
                         padding: 3rem 0;
                             & div{

@@ -160,7 +160,7 @@ header{
     text-align: center;
     background-color: var(--white);
     & h2{
-        position: relative;
+            position: relative;
             font-size: 9rem;
             text-transform: uppercase;
             color: transparent;
@@ -182,7 +182,7 @@ header{
         }
         & div{
             display: flex;
-
+            flex-wrap: wrap;
             & div{
                 & img{
                     width: 50%;
@@ -199,7 +199,9 @@ header{
                 }
             }
             & div{
-                display: block;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
                     & .container1{
                         padding: 3rem;
                         & h3{
@@ -226,6 +228,7 @@ header{
                     }
                     & .container2{
                         display: flex;
+                        flex-wrap: wrap;
                         justify-content: space-around;
                         padding: 3rem 0;
                             & div{
@@ -567,14 +570,62 @@ header{
         font-size:45%;
         overflow-x:hidden;
     }
+
+    header{
+        
+        & .reservation{
+            display: none;
+        }
+    }
+    .hero{
+        & .hero_item_1{
+            font-size: 6rem;
+        }
+        & .hero_item_2{
+            & img{
+            width: 80%;
+            }
+        }
+    }
+    .about_us{
+        padding: 0 5rem;
+        & div{
+            & div{
+                & img{
+                    width: 80%;
+                }
+            }
+        }
+        & .container2{
+            & div{
+                margin: 0 2rem;
+            }
+        }
+    }
+    .booking{
+        & .formulario{
+            width: 60%;
+        }
+    }
+    .footer{
+        & .footer_list{
+            & div{
+                & h3{
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
 }
 
 // ----- IPHONE 11 -----
 
 @media screen and (max-width: 376px) {
     html {
-        font-size:50%;
+        font-size:40%;
         overflow-x:hidden;
+        
     }
 
     header{
@@ -587,17 +638,18 @@ header{
                 font-size: var(--fontsize_m);
             }
         }
-        & .menu_nav{
-            display:flex;
-            justify-content: center;
-            position:absolute;
-            top: 7rem; right: -100%;
-            height: calc(100vh - 30rem);
-            width: 100%;
-            background-color:#feffff;
-            transition: 1.3s;
+
+            & .menu_nav{
+                display:flex;
+                justify-content: center;
+                position:absolute;
+                top: 7rem; right: -100%;
+                height: calc(100vh - 30rem);
+                width: 100%;
+                background-color:#feffff;
+                transition: 1.3s;
             
-            & ul{
+                & ul{
                 flex-direction: column;
                 padding: 4rem;  
 
@@ -607,6 +659,7 @@ header{
                                         
                     } 
                 }
+
                 & li:hover::before{
                     content: url(../img/ketchup.png);
                     display: inline-block;
@@ -620,17 +673,89 @@ header{
             }
             
 
-            &.active{
+            
+            & .reservation{
+                display: none;
+            }
+            
+            & .btn_menu{
+                display: flex;
+                cursor: pointer;
+            }
+            
+            & .active{
                 right:0%;
             }
         }
         
-        & .reservation{
-            display: none;
+    .hero{
+        & .hero_item_1{
+            grid-column: 1/3;
         }
-
-        & .btn_menu{
-            display: flex;
+        & .hero_item_2{
+            grid-column: 1/3;
+            width: 80%;
+        }
+        & .hero_item_3{
+            display: none;
+        }    
+    }
+    .about_us{
+        padding: 0;
+        & div{
+            & div{
+                & img{
+                display: none;
+                }
+            }
+            & div{
+                & .container2{
+                    
+                    & div{
+                        display:none;
+                    }
+                }
+            }
         }
     }
+    .our_menu{
+        display: block;
+        & .our_menu_container{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+            gap: 10rem;
+            padding: 8rem;
+        }
+    }
+    
+    .review{
+        display: block;
+        text-align: center;
+        padding: 2rem;
+        background-color: var(--white);
+
+    }
+
+    .booking{
+        .formulario{
+            width: 80%;
+        }
+    }
+
+    .footer{
+        
+        & .footer_list{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+            
+            & div{
+                padding: 3rem;
+                text-align: center;
+            }
+        }
+      
+    }
+}
 
